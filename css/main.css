@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap');
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html, body {
+	font-family: 'Roboto', sans-serif;
+	height: 100%;
+	color: #353535;
+}
+
+#map {
+	width: 100vw;
+	height: 100vh;
+	z-index: 50;
+}
+
+#map > .leaflet-pane.leaflet-map-pane {
+	filter: sepia(0.5);
+}
+
+.hidden {
+	display: none;
+}
+
+.numberIconTop, .numberIconBottom, .numberIconLeft, .numberIconRight {
+	font-family: 'Lato', sans-serif;
+	text-align: center;
+	color: white;    
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+.numberIconTop {
+	background-image: url("../images/marker-icon-top.png");
+	flex-direction: column;
+	line-height: 28px;
+}
+
+.numberIconBottom {
+	background-image: url("../images/marker-icon-bottom.png");
+	line-height: 32px;
+}
+
+.numberIconLeft {
+	background-image: url("../images/marker-icon-left.png");
+	line-height: 40px;
+}
+
+.numberIconRight {
+	background-image: url("../images/marker-icon-right.png");
+	line-height: 38px;
+}
+
+#pageWrapper {
+	position: absolute;
+	top: 0;
+	height: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.4);
+	z-index: 100;
+}
+
+.pageContent {
+	background: white;
+	text-align: center;
+	width: 60vw;
+	height: calc(100vh);
+	float: right;
+}
+
+.pageHeader {
+	margin-top: 50px;
+}
+
+h2 {
+	font-family: "Lato", sans-serif;
+	color: #553d34;
+	margin-bottom: 20px;
+}
+
+.navBtnWrapper {
+	position: relative;
+	top: calc(50% - 24px);
+}
+
+.navBtnWrapper > .prevPage {
+	left: 15px;
+}
+
+.navBtnWrapper > .nextPage {
+	right: 15px;
+}
+
+.exit {
+	right: 15px;
+	top: 15px;
+}
+
+.btn {
+	position: absolute;
+	cursor: pointer;
+	background: #553d34;
+	border: none;
+	border-radius: 30px;
+	height: 48px;
+	width: 48px;
+	text-align: center;
+	color: white;
+	font-size: 20px;
+}
