@@ -155,6 +155,8 @@ h3 {
 	display: flex;
 	margin: 0 auto;
 	min-height: 100px;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 
 .story:hover {
@@ -163,9 +165,12 @@ h3 {
 	transform: scale(0.95);
 }
 
+.lineBreak {
+	width: 100%;
+}
+
 .story {
 	text-align: center;
-	flex: 1;
 	border-radius: 100px;
 	margin: 20px;
 	width: 150px;

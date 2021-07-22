@@ -15,7 +15,7 @@ Odyssey.class.Page = class {
        	const contentDiv = document.createElement('div');
        	contentDiv.classList.add('summary');
 
-       	contentDiv.appendChild(this.createContent());
+       	contentDiv.innerHTML += this.createContent();
        	contentDiv.appendChild(this.createStories(Odyssey.steps[this._stepNumber].stories));
 
        	div.appendChild(contentDiv);
@@ -25,11 +25,9 @@ Odyssey.class.Page = class {
 	}
 
 	createContent() {
-		const element = document.createDocumentFragment();
-		element.innerHTML = `<h3>Résumé</h3>
+		return `<h3>Résumé</h3>
 				<p>${Odyssey.steps[this._stepNumber].summary}</p>
 				<h3>Histoires</h3>`;
-		return element;
 	}
 
 	createStories(stories) {
@@ -38,7 +36,12 @@ Odyssey.class.Page = class {
 
         this._stories = [];
         for (let i = 0; i < stories.length; i++) {
-        	const story = new Story(stories[i], i);
+        	if (i%2 == 0 && stories.length > 3) {
+        		const lineBreak = document.createElement('div');
+        		lineBreak.classList.add('lineBreak');
+        		storiesWrapper.appendChild(lineBreak);
+        	}
+        	const story = new Odyssey.class.Story(stories[i], i);
         	this._stories[i] = story;
         	storiesWrapper.appendChild(story.getDiv());
         }
@@ -106,43 +109,3 @@ Odyssey.class.Page = class {
 		return this._div;
 	}
 };
-
-class Story {
-	constructor(data, storyNumber) {
-		const storyData = data;
-		this._title = storyData.title;
-		this._text = storyData.text;
-
-		const div = document.createElement('div');
-		div.classList.add('story');
-		div.dataset.id = storyNumber;
-		div.innerHTML = `<p>${this._title}</p>`;
-		
-		this._div = div;
-	}
-
-	getDiv() {
-		return this._div;
-	}
-
-	getTitle() {
-		return this._title;
-	}
-
-	show(parent) {
-		const div = document.createElement('div');
-		div.classList.add('storyContent');
-		
-		this._contentDiv = div;
-		parent.appendChild(this._contentDiv);
-
-       	div.innerHTML = `<button class="reversedBtn backBtn"><</button>`;
-        div.innerHTML += `<div class="storyTitle"><h2>${this._title}</h2></div>`;
-        div.innerHTML += `<div class="storyText"><p>${this._text}</p></div>`;
-	}
-
-	hide() {
-		this._contentDiv.classList.add('hideToRight');
-		window.setTimeout(() => this._contentDiv.remove(), 990);
-	}
-}

@@ -18,15 +18,29 @@
 
 		<!-- Internal files -->
 		<script src="js/datas.js"></script>
-		<script src="js/events.js"></script>
+		<script>
+			for (let i = 0; i < Odyssey.totalSteps; i++) {
+				const script = document.createElement('script');
+				script.type = 'text/javascript';
+				script.src = `js/steps/Step_${i + 1}.js`;
+				document.body.append(script);
+			}
+		</script>	
+		<script type="text/javascript" src="js/events.js"></script>
+
 		<script src="js/class/PageWrapper.js"></script>
 		<script src="js/class/Page.js"></script>
+		<script src="js/class/Story.js"></script>
 		<script src="js/class/Map.js"></script>
 
 		<script>
-			Odyssey.map = new Odyssey.class.Map('map');
-			Odyssey.pageWrapper = new Odyssey.class.PageWrapper('#pageWrapper');
-			Odyssey.initEvents();
+			document.onreadystatechange = () => {
+				if (document.readyState == 'complete') {
+					Odyssey.map = new Odyssey.class.Map('map');
+					Odyssey.pageWrapper = new Odyssey.class.PageWrapper('#pageWrapper');
+					Odyssey.initEvents();
+				}
+			};
 		</script>
 	</body>
 </html>
