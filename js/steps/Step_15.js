@@ -22,10 +22,9 @@ Le nom de Télémaque signifie donc “celui qui se bat au loin”. Télémaque 
 				title: `On a tous besoin d’un Mentor`, 
 				text: `En l’absence d’Ulysse, Télémaque est éduqué par son ami Mentor. Son nom est resté en français : un “mentor” est le guide, le professeur d’une personnage plus jeune. 
 Mentor révèle à Télémaque que son père n’est pas mort et l’emmène à sa recherche. Les premiers chants de L’Odyssée, qui ne figurent pas dans l’édition que je t’ai prêtée, raconte en réalité le voyage de Télémaque.
-Cependant, Mentor a quelque chose de divin … Il s’agit en réalité de la déesse Athéna, protectrice d’Ulysse.`
+	Cependant, Mentor a quelque chose de divin … Il s’agit en réalité de la déesse Athéna, protectrice d’Ulysse.`
 			}
 		] 
 	};
 	Odyssey.steps[14] = step;
-	console.log('last step');
 })();

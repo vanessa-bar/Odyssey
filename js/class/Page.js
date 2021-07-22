@@ -26,7 +26,7 @@ Odyssey.class.Page = class {
 
 	createContent() {
 		return `<h3>Résumé</h3>
-				<p>${Odyssey.steps[this._stepNumber].summary}</p>
+				${Odyssey.steps[this._stepNumber].summary}
 				<h3>Histoires</h3>`;
 	}
 
