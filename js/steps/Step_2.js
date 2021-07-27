@@ -2,7 +2,7 @@
 	const step = { 
 		name: `Les Cicones / Ismaros`, 
 		markerOrientation: `top`,
-		summary: `Ulysse et ses soldats accostent par erreur à Ismaros, ville des Cicones (ou “kikones”). Assoiffés de sang, ils pillent la ville et s’endorment, mais des soldats des alentours, alertés, surgissent et tuent une soixante de soldats d’Ithaque. Les compagnons d’Ulysse repartent, endeuillés.`,
+		summary: `<p>Ulysse et ses soldats accostent par erreur à Ismaros, ville des Cicones (ou “kikones”). Assoiffés de sang, ils pillent la ville et s’endorment, mais des soldats des alentours, alertés, surgissent et tuent une soixante de soldats d’Ithaque. Les compagnons d’Ulysse repartent, endeuillés.</p>`,
 		stories: [
 			{ 
 				title: `Suivez ses Thraces`, 
